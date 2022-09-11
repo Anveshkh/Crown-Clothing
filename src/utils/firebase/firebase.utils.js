@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app'
 // This initialize app function creates an app instance for you based off of some type of config
 // This config is a object that allows us to attach this firebase app instance to that instance that we setup in firebase
 
-import { signInWithEmailAndPassword, getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signOut } from 'firebase/auth'
+import { signInWithEmailAndPassword, getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signOut,onAuthStateChanged  } from 'firebase/auth'
 
 
 import {
@@ -88,3 +88,4 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) =>{
 export const signOutUser = async () => await signOut(auth);
 
 
+export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
