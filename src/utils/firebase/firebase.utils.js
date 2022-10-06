@@ -26,7 +26,7 @@ const app = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
 //GoogleAuthProvider is generally a class that we get from firebase authentication
-//We can generate multiple providers like provider for facebook, github, linked and so on
+//We can generate multiple providers like provider for facebook, github, linked and so on 
 
 
 provider.setCustomParameters({
@@ -34,7 +34,7 @@ provider.setCustomParameters({
 })
 
 export const auth = getAuth(); 
-//Authentication is single . the rules for authentication are same for every provider
+//Authentication is single . The rules for authentication are same for every provider
 
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
@@ -43,12 +43,15 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider)
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async(userAuth, additionalInformation) => {
+    
+    // checks if there is a users collection with certain user in db database if not it will create one
     const userDocRef = doc(db, 'users', userAuth.uid);
-
+    
     // console.log(userDocRef);
 
     const userSnapshot = await getDoc(userDocRef);
-    console.log(userSnapshot.exists());
+    // gives the data at the userdocref
+    
 
     if (!userSnapshot.exists()){
         const { displayName, email } = userAuth;

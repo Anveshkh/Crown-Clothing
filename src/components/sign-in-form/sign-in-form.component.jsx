@@ -1,7 +1,7 @@
 import './sign-in-form.styles.scss'
 
-import { useState } from "react";
-
+import { useState, useContext } from "react";
+import { UserContext } from '../../contexts/user.context';
 
 import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 
@@ -20,10 +20,11 @@ const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
 
-    
+    const {setCurrentUser } = useContext(UserContext);
+
 
     const resetFormFields = () => {
-        setFormFields(defaultFormFields);
+        setFormFields(defaultFormFields); 
     };
 
     const signInWithGoogle = async () => {
@@ -36,13 +37,14 @@ const SignInForm = () => {
 
 
         try {
-            await signInAuthUserWithEmailAndPassword(email, password);
+            const { user } = await signInAuthUserWithEmailAndPassword(email, password);
+            setCurrentUser(user);
             
             resetFormFields();
         } catch (error) {
            switch (error.code){
             case 'auth/wrong-password': 
-                alert("incorrect password for email");
+                alert("incorrect password or email");
                 break;
 
             case 'auth/user-not-found':
@@ -86,7 +88,7 @@ const SignInForm = () => {
                         type: 'password',
                         required: true,
                         onChange: handleChange,
-                        name: 'Password',
+                        name: 'password',
                         value: password,
                     }}
                 />

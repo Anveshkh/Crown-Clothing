@@ -15,12 +15,16 @@ import { ReactComponent as CrwnLogo } from '../../assets/crown.svg'
 
 const Navigation = () => {
 
-    const { currentUser } = useContext(UserContext);
+    const { currentUser, setCurrentUser } = useContext(UserContext);
     const { isCartOpen } = useContext(CartContext)
 
+    // console.log("hit"); 
+    
+    // console.log("current user is: ", currentUser);
 
     const signOutHandler = async () => {
         await signOutUser();
+        setCurrentUser(null);
     }
 
     return (
@@ -33,7 +37,14 @@ const Navigation = () => {
                     <Link to='/shop' className="nav-link">
                         SHOP
                     </Link>
-                    {currentUser ? (<span className="nav-link" onClick={signOutHandler}>SIGN OUT</span>) : (<Link className="nav-linik" to='/auth'>SIGN IN</Link>)}
+                    { currentUser ? (
+                        <span className="nav-link" onClick={signOutHandler}>SIGN OUT</span>
+                    
+                    ) : (
+                        <Link className="nav-link" to='/auth'>
+                            SIGN IN
+                        </Link>
+                    )}
                     <CartIcon />
                 </div>
 
