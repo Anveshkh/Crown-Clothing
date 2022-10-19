@@ -6,7 +6,8 @@ import { UserContext } from '../../contexts/user.context';
 import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 
 import FormInput from "../form-input/form-input.component";
-import Button from '../button/button.component';
+import Button , { BUTTON_TYPE_CLASSES } from '../button/button.component';
+
 
 const defaultFormFields = {
 
@@ -97,7 +98,7 @@ const SignInForm = () => {
                     
                 <Button type='submit'>Sign In</Button>
                 {/* By default buttons are of type submit inside of forms */}
-                <Button onClick={signInWithGoogle} buttonType='google' type='button' >Google sign in</Button>
+                <Button onClick={signInWithGoogle} buttonType={BUTTON_TYPE_CLASSES.google} type='button' >Google sign in</Button>
 
                 </div>
 

@@ -56,6 +56,12 @@ const SHOP_DATA = [
         imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
         price: 16,
       },
+      {
+        id: 10,
+        name: 'Urban Monkey',
+        imageUrl : 'https://freepngimg.com/thumb/hat/20-cowboy-hat-png-image-thumb.png',
+        price: 18
+      }
     ],
   },
   {
@@ -234,6 +240,63 @@ const SHOP_DATA = [
       },
     ],
   },
+  {
+    title: 'accessories',
+    items: [
+      {
+        id: 1,
+        name : 'Series 2',
+        imageUrl : 'https://w7.pngwing.com/pngs/25/277/png-transparent-apple-watch-series-2-apple-watch-series-3-apple-watch-series-1-smart-apple-watch-sports-watch-band-watch-accessory-sport-grey-thumbnail.png',
+        price: 299,
+      },
+      {
+        id: 2,
+        name: 'Series 3',
+        imageUrl : 'https://w7.pngwing.com/pngs/652/395/png-transparent-apple-watch-series-3-apple-watch-series-2-macbook-pro-apple-watch-series-3-thumbnail.png',
+        price: 399
+      },
+      {
+        id : 3,
+        name: 'Classic Watch',
+        imageUrl : 'https://pngimg.com/uploads/watches/small/watches_PNG9898.png',
+        price : 150
+      },
+      {
+        id: 4,
+        name : ' Submariner',
+        imageUrl : 'https://w7.pngwing.com/pngs/134/887/png-transparent-round-black-rolex-analog-watch-with-bracelet-rolex-submariner-rolex-daytona-rolex-datejust-rolex-gmt-master-ii-black-male-watch-rolex-watch-black-hair-watch-accessory-black-white-thumbnail.png',
+        price : 800
+      },
+
+      {
+        id: 5,
+        name : 'R Daytona',
+        imageUrl : 'https://w7.pngwing.com/pngs/494/148/png-transparent-rolex-datejust-rolex-daytona-rolex-submariner-watch-rolex-bracelet-watch-accessory-diamond-thumbnail.png',
+        price : 1500
+      },
+
+      {
+        id: 6,
+        name : ' Day-Date ',
+        imageUrl : 'https://w7.pngwing.com/pngs/701/260/png-transparent-rolex-daytona-rolex-datejust-rolex-submariner-watch-u52b3u529bu58ebu5b87u5b99u8ba1u578bu8feau901au62ff-black-rolex-watch-black-hair-watch-accessory-black-white-thumbnail.png',
+        price : 5600
+      },
+
+      {
+        id: 7,
+        name : ' DateJust',
+        imageUrl : 'https://w7.pngwing.com/pngs/59/80/png-transparent-rolex-datejust-rolex-submariner-jewellery-diamond-rolex-watch-accessory-gold-platinum-thumbnail.png',
+        price : 1800
+      },
+
+      {
+        id: 8,
+        name : ' AirKing',
+        imageUrl : 'https://w7.pngwing.com/pngs/572/135/png-transparent-rolex-datejust-watch-rolex-submariner-diamond-rolex-bracelet-watch-accessory-diamond-thumbnail.png',
+        price : 8000
+      },
+    ]
+  }
 ];
 
 
